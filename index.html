@@ -19,8 +19,18 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "s7MmGJsZk3jXCr5DW",
+      });
+    })();
+    </script>
   </head>
+
   <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
 
     <nav class="unslate_co--site-mobile-menu">
@@ -591,7 +601,7 @@ digital experiences.</h2>
           <div class="row justify-content-between">
             
             <div class="col-md-6">
-              <form method="post" class="form-outline-style-v1" id="contactForm">
+            
                 <div class="form-group row mb-0">
 
                   <div class="col-lg-6 form-group gsap-reveal">
@@ -607,17 +617,18 @@ digital experiences.</h2>
                     <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
                   </div>
                 </div>
-                <div class="form-group row gsap-reveal">
+                <!-- <div class="form-group row gsap-reveal">
                     <div class="col-md-12 d-flex align-items-center">
-                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
+                      <input onclick="SendMail()" type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
                       <span class="submitting"></span>
                     </div>
-                  </div>
-              </form>
-              <div id="form-message-warning" class="mt-4"></div> 
+                  </div> -->
+                  <button onclick="SendMail()"> Send Email</button>
+           
+              <!-- <div id="form-message-warning" class="mt-4"></div> 
               <div id="form-message-success">
                 Your message was sent, thank you!
-              </div>
+              </div> -->
 
             </div>
 

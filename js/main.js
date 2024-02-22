@@ -1,3 +1,5 @@
+// import emailjs from '@emailjs/browser'
+
 AOS.init({
  	duration: 800,
  	easing: 'ease',
@@ -676,3 +678,13 @@ var animateReveal = function() {
 
 }
 
+function SendMail(){
+	var params = {
+		from_name : document.getElementById("name").value,
+		email_id : document.getElementById("email").value,
+		message : document.getElementById("message").value
+	}
+	emailjs.send("service_iav6a4h","template_xtsc3ft", params).then((res)=>{
+		alert("Success" + res.status)
+	})
+}
